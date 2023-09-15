@@ -17,7 +17,7 @@
 mono_crash.*
 
 #secrets
-Secrets/Auth.cs
+Auth.cs
 
 # Build results
 [Dd]ebug/
