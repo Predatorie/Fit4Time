@@ -28,7 +28,7 @@ public class Result
 
     /// <summary> Gets a value indicating whether this object is success./ </summary>
     /// <value> True if this object is success, false if not. </value>
-    protected bool IsSuccess { get; }
+    public bool IsSuccess { get; }
 
     /// <summary> Gets the error./ </summary>
     /// <value> The error. </value>

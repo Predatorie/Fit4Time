@@ -1,12 +1,4 @@
-﻿using System.Diagnostics;
-using System.Net;
-using System.Net.Http.Headers;
-using CommunityToolkit.Maui;
-using Microsoft.Extensions.Logging;
-using Polly;
-using MauiApp = Microsoft.Maui.Hosting.MauiApp;
-
-namespace Fit4Time;
+﻿namespace Fit4Time;
 
 public static class MauiProgram
 {
@@ -40,6 +32,7 @@ public static class MauiProgram
     };
 
     #endregion
+    
     public static MauiApp CreateMauiApp()
     {
         var retryPolicy = Policy
