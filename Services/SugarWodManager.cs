@@ -14,24 +14,24 @@ public class SugarWodManager : ISugarWodManager
     }
     
      /// <summary>
-    ///     Gets a list of athletes by role, all, coaches, owners
+    ///     Gets a list of roles by role, all, coaches, owners
     /// </summary>
     /// <param name="role">The athletes role</param>
     /// <param name="cancellationToken">The cancellation token</param>
     /// <returns>A list of athletes on success, an error message otherwise</returns>
-    public async Task<Result<Athlete>> GetAthletesAsync(string role, CancellationToken cancellationToken)
+    public async Task<Result<Athlete>> GetRoleAsync(string role, CancellationToken cancellationToken)
     {
         var result = await api.Get<Athlete>($"/v2/athletes?role={role}&page[limit]=50", cancellationToken);
         return result.IsSuccess ? Result.Ok(result.Value) : Result.Fail<Athlete>(result.Error);
     }
 
     /// <summary>
-    ///     Gets the next list of athletes from pagination link
+    ///     Gets the next list from pagination link
     /// </summary>
     /// <param name="page">The page url to the next list of athletes</param>
     /// <param name="cancellationToken">The cancellation token</param>
     /// <returns>A list of athletes on success, an error message otherwise</returns>
-    public async Task<Result<Athlete>> GetAthletesNextAsync(string page, CancellationToken cancellationToken)
+    public async Task<Result<Athlete>> GetRolesNextAsync(string page, CancellationToken cancellationToken)
     {
         // We need to remove the leading base url from the link because
         // our httpClient already has this assigned. We just need the pagination link.

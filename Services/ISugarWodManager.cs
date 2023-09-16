@@ -11,7 +11,7 @@ public interface ISugarWodManager
     /// <param name="role">The role, for example, coaches</param>
     /// <param name="cancellationToken">The cancellation token instance</param>
     /// <returns>A list of athletes on success, an error of failure.</returns>
-    Task<Result<Athlete>> GetAthletesAsync(string role, CancellationToken cancellationToken);
+    Task<Result<Athlete>> GetRoleAsync(string role, CancellationToken cancellationToken);
 
     /// <summary>
     /// Gets a list of athletes.
@@ -19,7 +19,7 @@ public interface ISugarWodManager
     /// <param name="page">Link to the next page of results</param>
     /// <param name="cancellationToken">The cancellation token instance</param>
     /// <returns>A list of athletes on success, an error of failure.</returns>
-    Task<Result<Athlete>> GetAthletesNextAsync(string page, CancellationToken cancellationToken);
+    Task<Result<Athlete>> GetRolesNextAsync(string page, CancellationToken cancellationToken);
 
     /// <summary>
     /// Gets a list of workouts.

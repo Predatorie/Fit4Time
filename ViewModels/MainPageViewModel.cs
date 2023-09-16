@@ -93,7 +93,7 @@ public partial class MainPageViewModel : ObservableObject
 
             this.ResultCount = 0;
 
-            var result = await sugarWodManager.GetAthletesAsync("athletes", cancellationToken);
+            var result = await sugarWodManager.GetRoleAsync("athletes", cancellationToken);
             if (result.IsSuccess)
             {
                 var athletes = result.Value?.Data;
@@ -142,7 +142,7 @@ public partial class MainPageViewModel : ObservableObject
 
             this.ResultCount = 0;
 
-            var result = await sugarWodManager.GetAthletesAsync("wods", cancellationToken);
+            var result = await sugarWodManager.GetRoleAsync("wods", cancellationToken);
             if (result.IsSuccess)
             {
                 var data = result.Value?.Data;
@@ -191,7 +191,7 @@ public partial class MainPageViewModel : ObservableObject
 
             this.ResultCount = 0;
 
-            var result = await sugarWodManager.GetAthletesAsync("wods", cancellationToken);
+            var result = await sugarWodManager.GetRoleAsync("wods", cancellationToken);
             if (result.IsSuccess)
             {
                 var owners = result.Value?.Data;
