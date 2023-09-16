@@ -7,3 +7,5 @@ global using CommunityToolkit.Maui;
 global using Microsoft.Extensions.Logging;
 global using Polly;
 global using MauiApp = Microsoft.Maui.Hosting.MauiApp;
+global using Fit4Time.Services;
+global using Fit4Time.ViewModels;

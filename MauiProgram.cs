@@ -1,4 +1,7 @@
-﻿namespace Fit4Time;
+﻿using Fit4Time.Services;
+using Fit4Time.ViewModels;
+using Fit4Time.Views;
+namespace Fit4Time;
 
 public static class MauiProgram
 {
@@ -75,6 +78,16 @@ public static class MauiProgram
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue($"{Auth.Key}");
         }).AddPolicyHandler(retryWithTimeoutWithCircuitBreakerPolicy);
 
+        // Register our Services
+        builder.Services.AddSingleton<App>();
+        builder.Services.AddSingleton<ISugarWodApiService, SugarWodApiService>();
+        builder.Services.AddSingleton<ISugarWodManager, SugarWodManager>();
+
+        // Register our Views
+        builder.Services.AddSingleton<MainPage>();
+
+        // Register our View Models
+        builder.Services.AddSingleton<MainPageViewModel>();
 
 #if DEBUG
         builder.Logging.AddDebug();
